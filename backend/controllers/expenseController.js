@@ -1,28 +1,28 @@
-const incomeModel = require("../models/incomeModel")
+const expenseModel = require("../models/expenseModel")
 
-exports.getIncome = async(req, res) => {
+exports.getExpense = async(req, res) => {
     try {
-        const incomes = await incomeModel.find().sort({createdAt : -1})
-        res.status(200).json(incomes)
+        const expenses = await expenseModel.find().sort({createdAt : -1})
+        res.status(200).json(expenses)
     } catch (error) {
         res.status(500).json({message: 'Server error'})
     }
 }
 
 
-exports.addIncome = async(req, res) => {
+exports.addExpense = async(req, res) => {
     // console.log(req.body);
     const {title, amount, category, description, date} = req.body
 
-    //create an instance of the income schema/model
-    const income = incomeModel({
+    //create an instance of the expense schema/model
+    const expense = expenseModel({
         title,
         amount,
         category,
         description,
         date
     })
-    console.log(income)
+    console.log(expense)
 
 
     try {
@@ -33,8 +33,8 @@ exports.addIncome = async(req, res) => {
         if(amount <= 0 || !amount === 'number'){
             return res.status(400).json({message: 'Amount should be a positive no'})
         }
-        await income.save()
-        res.status(200).json({message: 'Income added'})
+        await expense.save()
+        res.status(200).json({message: 'Expense added'})
         
     } catch (error) {
         res.status(500).json({message: 'Server error'})
@@ -44,16 +44,15 @@ exports.addIncome = async(req, res) => {
 
 }
 
-exports.deleteIncome = async(req, res) => {
+exports.deleteExpense = async(req, res) => {
     const {id} = req.params;
     console.log(req.params);
-    incomeModel.findByIdAndDelete(id)
-        .then((income) => {
-            res.status(200).json({message: 'Income deleted'})
+    expenseModel.findByIdAndDelete(id)
+        .then((expense) => {
+            res.status(200).json({message: 'Expense deleted'})
         })
         .catch((err) => {
             res.status(500).json({message: 'Server error for delete'})
 
         })
-
 }
