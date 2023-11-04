@@ -12,9 +12,9 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(cors()) //Cross-Origin Resource Sharing- acessing server
 
-app.get('/',(req,res)=> {
-    res.send('Hi GET in server') //check response using postman - http://localhost:5000/
-})
+// app.get('/',(req,res)=> {
+//     res.send('Hi GET in server') //check response using postman - http://localhost:5000/
+// })
 
 //routes
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/'+ route))) //api to get routes

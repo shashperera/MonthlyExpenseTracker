@@ -1,5 +1,6 @@
 const expenseModel = require("../models/expenseModel")
 
+
 exports.getExpense = async(req, res) => {
     try {
         const expenses = await expenseModel.find().sort({createdAt : -1})
@@ -55,4 +56,5 @@ exports.deleteExpense = async(req, res) => {
             res.status(500).json({message: 'Server error for delete'})
 
         })
+
 }

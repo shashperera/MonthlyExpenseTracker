@@ -10,7 +10,7 @@ router.get('/',(req,res)=> {
 router.post('/addIncome',addIncome) //method from controller
     .get('/getIncome',getIncome)
     .delete('/deleteIncome/:id',deleteIncome)
-    .post('/addExpense',addExpense) //method from controller
+    .post('/addExpense',addExpense)
     .get('/getExpense',getExpense)
     .delete('/deleteExpense/:id',deleteExpense)
 
