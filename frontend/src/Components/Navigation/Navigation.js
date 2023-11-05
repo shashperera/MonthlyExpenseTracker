@@ -19,7 +19,7 @@ function Navigation({active, setActive}) {
                 {menuItems.map((item) => {
                     return <li
                         key={item.id}
-                        onClick={() => setActive(item.id)}
+                        onClick={() => setActive(item.id)} //change state to id we click on(default 1)
                         className={active === item.id ? 'active': ''}
                     >
                         {item.icon}
