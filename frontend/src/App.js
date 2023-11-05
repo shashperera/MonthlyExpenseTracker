@@ -5,42 +5,45 @@ import { MainLayout } from './styles/layout'
 import Orb from './Components/Orb/Orb'
 import Navigation from './Components/Navigation/Navigation'
 import Dashboard from './Components/Dashboard/Dashboard';
-import Income from './Components/Incomes/Income'
+import Income from './Components/Income/Income'
 import Expenses from './Components/Expenses/Expenses';
+import { useGlobalContext } from './context/globalContext';
 
 function App() {
 
   const [active, setActive] = useState(1);//id starts from 1
 
+  const global = useGlobalContext
+  console.log(global)
 
   //display data in same dashboard for different components
   const displayData = () => {
-    switch(active) {//depending on state
-    case 1:
-      return <Dashboard/>
-    case 2:
-      return <Dashboard/>
-    case 3:
-      return <Income/>
-    case 4:
-      return <Expenses/>
-    default:
-      return <Dashboard/>
+    switch (active) {//depending on state
+      case 1:
+        return <Dashboard />
+      case 2:
+        return <Dashboard />
+      case 3:
+        return <Income />
+      case 4:
+        return <Expenses />
+      default:
+        return <Dashboard />
     }
   }
 
   //useMemo hook to keep that in memory without re-rendering
   const orbMemo = useMemo(() => {
-    return <Orb/>
+    return <Orb />
 
-  },[])
+  }, [])
 
   return (
     <AppStyled bg={bg} className="App">
       {orbMemo}
       <MainLayout>
         <h1>Hi</h1>
-        <Navigation active={active} setActive={setActive}/>
+        <Navigation active={active} setActive={setActive} />
         <main>
           {displayData()}
         </main>
