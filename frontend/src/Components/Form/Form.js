@@ -8,7 +8,7 @@ import { plus } from '../../utils/icons';
 
 
 function Form() {
-    const {addIncome, getIncomes: getIncome, error, setError} = useGlobalContext()
+    const {addIncome} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -21,12 +21,12 @@ function Form() {
 
     const handleInput = name => e => { //name is dynamic
         setInputState({...inputState, [name]: e.target.value})
-        setError('')
+        // setError('')
     }
 
     const handleSubmit = e => {
         e.preventDefault()
-        addIncome(inputState)
+        addIncome(inputState) //send payload as inputstate
         setInputState({
             title: '',
             amount: '',
@@ -38,7 +38,6 @@ function Form() {
 
     return (
         <FormStyled onSubmit={handleSubmit}>
-            {error && <p className='error'>{error}</p>}
             <div className="input-control">
                 <input 
                     type="text" 
