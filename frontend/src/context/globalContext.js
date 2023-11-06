@@ -19,6 +19,7 @@ export const GlobalProvider = ({ children }) => {
             .catch((err) => {
                 setError(err.response.data.message)
             })
+        getIncome()
     }
 
     const getIncome = async () => {
@@ -27,21 +28,22 @@ export const GlobalProvider = ({ children }) => {
         console.log(response.data)
     }
 
-    // const deleteIncome = async (id) => {
-    //     const res  = await axios.delete(`${BASE_URL}deleteIncome/${id}`)
-    //     getIncome()
-    // }
+    const deleteIncome = async (id) => {
+        const res  = await axios.delete(`${BASE_URL}deleteIncome/${id}`)
+        getIncome()
+    }
 
-    // const totalIncome = () => {
-    //     let totalIncome = 0;
-    //     income.forEach((income) =>{
-    //         totalIncome = totalIncome + income.amount
-    //     })
+    //cal total income
+    const totalIncome = () => {
+        let totalIncome = 0;
+        income.forEach((income) =>{
+            totalIncome = totalIncome + income.amount
+        })
 
-    //     return totalIncome;
-    // }
-
-
+        return totalIncome;
+    }
+    console.log(    totalIncome()
+    )
     // //calculate expenses
     // const addExpense = async (income) => {
     //     const response = await axios.post(`${BASE_URL}addExpense`, income) //endpont is add-expense, payload is "income"
@@ -90,7 +92,9 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider value={{
             addIncome,
             getIncome,
-            income
+            income,
+            deleteIncome,
+            totalIncome
 
         }}>            {children}
         </GlobalContext.Provider>

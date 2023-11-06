@@ -6,18 +6,19 @@ import Form from '../Form/Form';
 import IncomeItem from '../IncomeItem/IncomeItem';
 
 function Income() {
-  const {addIncome, income, getIncome} = useGlobalContext()
+  const {addIncome, income, getIncome, deleteIncome, totalIncome} = useGlobalContext()
 
 
   useEffect(() => {
     getIncome()
-  },[])
+  },[]) //effect should only run when dependency.array of dependencies inside [] changes. 
+  //If dependencies does not change between renders, the effect won't run. 
 
   return (
     <IncomeStyled>
       <InnerLayout>
         <h1>Income</h1>
-      {/* <h2 className="total-income">Total Income: <span>${totalIncome()}</span></h2> */}
+      <h2 className="total-income">Total Income: <span>${totalIncome()}</span></h2>
                 <div className="income-content">
                     <div className="form-container">
                         <Form />
@@ -35,7 +36,7 @@ function Income() {
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
-                                // deleteItem={deleteIncome}
+                                deleteItem={deleteIncome}
                             />
 
                       })}

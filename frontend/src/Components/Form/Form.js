@@ -8,7 +8,7 @@ import { plus } from '../../utils/icons';
 
 
 function Form() {
-    const {addIncome} = useGlobalContext()
+    const {addIncome, getIncome} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -34,6 +34,7 @@ function Form() {
             category: '',
             description: '',
         })
+        getIncome()//refresh and view the list when submitted
     }
 
     return (
@@ -70,7 +71,7 @@ function Form() {
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value=""  disabled >Select Option</option>
                     <option value="salary">Salary</option>
-                    <option value="investments">Investiments</option>
+                    <option value="investments">Investments</option>
                     <option value="stocks">Stocks</option>
                     <option value="bank">Bank Transfer</option>  
                     <option value="other">Other</option>  
