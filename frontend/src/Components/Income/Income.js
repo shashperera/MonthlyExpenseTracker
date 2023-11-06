@@ -58,19 +58,19 @@ const IncomeStyled = styled.div`
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         border-radius: 20px;
-        padding: 1rem;
+        padding: 0.25rem;
         margin: 1rem 0;
         font-size: 2rem;
         gap: .5rem;
         span{
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--color-green);
+            color: blue; //var(--color-green)
         }
     }
     .income-content{
         display: flex;
-        gap: 2rem;
+        gap: 3.5rem;
         .incomes{
             flex: 1;
         }

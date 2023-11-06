@@ -97,15 +97,15 @@ const IncomeItemStyled = styled.div`
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
-    padding: 1rem;
+    padding: 0.3rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
     color: #222260;
     .icon{
-        width: 80px;
+        width: 100px;
         height: 80px;
         border-radius: 20px;
         background: #F5F5F5;
@@ -147,11 +147,11 @@ const IncomeItemStyled = styled.div`
             .text{
                 display: flex;
                 align-items: center;
-                gap: 1.5rem;
+                gap: 2rem;
                 p{
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
+                    gap: 0.8rem;
                     color: var(--primary-color);
                     opacity: 0.8;
                 }
