@@ -46,7 +46,7 @@ export const GlobalProvider = ({ children }) => {
     )
 
     // //calculate expenses
-    const addExpense = async (expenses) => {
+    const addExpenses = async (expenses) => {
         const response = await axios.post(`${BASE_URL}addExpense`, expenses) //endpont is add-expense, payload is "income"
             .catch((err) =>{
                 setError(err.response.data.message)
@@ -96,9 +96,10 @@ export const GlobalProvider = ({ children }) => {
             income,
             deleteIncome,
             totalIncome,
-            addExpense,
+            expenses,
+            addExpenses,
             getExpenses,
-            deleteExpense: deleteExpenses,
+            deleteExpenses,
             totalExpenses
 
         }}>            {children}

@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { InnerLayout } from '../../styles/layout';
 import { useGlobalContext } from '../../context/globalContext';
-import Form from '../Form/Form';
-import ExpenseItem from '../IncomeItem/IncomeItem';
+import IncomeItem from '../IncomeItem/IncomeItem';
+import ExpenseForm from './ExpenseForm';
 
 function Expenses() {
-  const {addExpense, income: expenses, getIncome: getExpenses, deleteIncome: deleteExpenses, totalIncome: totalExpenses} = useGlobalContext()
+  const {addExpense, expenses, getExpenses, deleteExpenses, totalExpenses} = useGlobalContext()
 
 
   useEffect(() => {
@@ -18,15 +18,15 @@ function Expenses() {
     <ExpenseStyled>
       <InnerLayout>
         <h1>Expenses</h1>
-      <h2 className="total-expenses">Total Expenses: <span>${totalExpenses()}</span></h2>
-                <div className="expenses-content">
-                    <div className="expenses-container">
-                        <Form />
+      <h2 className="total-income">Total Expenses: <span>${totalExpenses()}</span></h2>
+                <div className="income-content">
+                    <div className="income-container">
+                        <ExpenseForm />
                     </div>
-                    <div className="expenses">
+                    <div className="income">
                       {expenses.map((expenses) => {
                             const {_id, title, amount, date, category, description, type} = expenses; //destructure properties of income
-                            return <ExpenseItem
+                            return <IncomeItem //icons from Income itemexpense category
                                 key={_id}
                                 id={_id} 
                                 title={title} 
@@ -50,7 +50,7 @@ function Expenses() {
 const ExpenseStyled = styled.div`
     display: flex;
     overflow: auto;
-    .total-expenses{
+    .total-income{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,10 +68,10 @@ const ExpenseStyled = styled.div`
             color: blue; //var(--color-green)
         }
     }
-    .expenses-content{
+    .income-content{
         display: flex;
         gap: 3.5rem;
-        .expenses{
+        .income{
             flex: 1;
         }
     }
