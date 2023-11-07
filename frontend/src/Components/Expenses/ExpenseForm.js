@@ -8,7 +8,7 @@ import { plus } from '../../utils/icons';
 
 
 function ExpenseForm() {
-    const {addIncome, getIncome} = useGlobalContext()
+    const {addIncome: addExpenses, getIgetExpensesgetncome: getExpenses} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -26,7 +26,7 @@ function ExpenseForm() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        addIncome(inputState) //send payload as inputstate
+        addExpenses(inputState) //send payload as inputstate
         setInputState({
             title: '',
             amount: '',
@@ -44,7 +44,7 @@ function ExpenseForm() {
                     type="text" 
                     value={title}
                     name={'title'} 
-                    placeholder="Income Title"
+                    placeholder="Expense Title"
                     onChange={handleInput('title')}
                 />
             </div>
@@ -52,7 +52,7 @@ function ExpenseForm() {
                 <input value={amount}  
                     type="text" 
                     name={'amount'} 
-                    placeholder={'Income Amount'}
+                    placeholder={'Expense Amount'}
                     onChange={handleInput('amount')} 
                 />
             </div>
@@ -78,11 +78,11 @@ function ExpenseForm() {
                 </select>
             </div>
             <div className="input-control">
-                <textarea name="description" value={description} placeholder='Add A Reference' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
+                <textarea name="description" value={description} placeholder='Add a Reference' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
             <div className="submit-btn">
                 <Button 
-                    name={'Add Income'}
+                    name={'Add Expenses'}
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}

@@ -60,7 +60,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(response.data)
     }
 
-    const deleteExpense = async (id) => {
+    const deleteExpenses = async (id) => {
         const res  = await axios.delete(`${BASE_URL}deleteExpense/${id}`)
         getExpenses()
     }
@@ -98,7 +98,7 @@ export const GlobalProvider = ({ children }) => {
             totalIncome,
             addExpense,
             getExpenses,
-            deleteExpense,
+            deleteExpense: deleteExpenses,
             totalExpenses
 
         }}>            {children}

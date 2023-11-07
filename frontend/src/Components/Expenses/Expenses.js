@@ -3,30 +3,30 @@ import styled from 'styled-components'
 import { InnerLayout } from '../../styles/layout';
 import { useGlobalContext } from '../../context/globalContext';
 import Form from '../Form/Form';
-import IncomeItem from '../IncomeItem/IncomeItem';
+import ExpenseItem from '../IncomeItem/IncomeItem';
 
 function Expenses() {
-  const {addExpense, expenses, getIncome, deleteIncome, totalIncome} = useGlobalContext()
+  const {addExpense, income: expenses, getIncome: getExpenses, deleteIncome: deleteExpenses, totalIncome: totalExpenses} = useGlobalContext()
 
 
   useEffect(() => {
-    getIncome()
+    getExpenses()
   },[]) //effect should only run when dependency.array of dependencies inside [] changes. 
   //If dependencies does not change between renders, the effect won't run. 
 
   return (
-    <IncomeStyled>
+    <ExpenseStyled>
       <InnerLayout>
         <h1>Expenses</h1>
-      <h2 className="total-income">Total Expenses: <span>${totalIncome()}</span></h2>
-                <div className="income-content">
-                    <div className="form-container">
+      <h2 className="total-expenses">Total Expenses: <span>${totalExpenses()}</span></h2>
+                <div className="expenses-content">
+                    <div className="expenses-container">
                         <Form />
                     </div>
-                    <div className="income">
-                      {income.map((income) => {
-                            const {_id, title, amount, date, category, description, type} = income; //destructure properties of income
-                            return <IncomeItem
+                    <div className="expenses">
+                      {expenses.map((expenses) => {
+                            const {_id, title, amount, date, category, description, type} = expenses; //destructure properties of income
+                            return <ExpenseItem
                                 key={_id}
                                 id={_id} 
                                 title={title} 
@@ -36,21 +36,21 @@ function Expenses() {
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
-                                deleteItem={deleteIncome}
+                                deleteItem={deleteExpenses}
                             />
 
                       })}
                       </div>
                       </div>
       </InnerLayout>
-    </IncomeStyled>
+    </ExpenseStyled>
   )
 }
 
-const IncomeStyled = styled.div`
+const ExpenseStyled = styled.div`
     display: flex;
     overflow: auto;
-    .total-income{
+    .total-expenses{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,10 +68,10 @@ const IncomeStyled = styled.div`
             color: blue; //var(--color-green)
         }
     }
-    .income-content{
+    .expenses-content{
         display: flex;
         gap: 3.5rem;
-        .incomes{
+        .expenses{
             flex: 1;
         }
     }
