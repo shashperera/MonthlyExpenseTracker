@@ -75,18 +75,18 @@ export const GlobalProvider = ({ children }) => {
     }
 
 
-    // const totalBalance = () => {
-    //     return totalIncome() - totalExpenses()
-    // }
+    const totalBalance = () => {
+        return totalIncome() - totalExpenses()
+    }
 
-    // const transactionHistory = () => {
-    //     const history = [...income, ...expenses]
-    //     history.sort((a, b) => {
-    //         return new Date(b.createdAt) - new Date(a.createdAt)
-    //     })
+    const transactionHistory = () => {
+        const history = [...income, ...expenses]
+        history.sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt)
+        })
 
-    //     return history.slice(0, 3)
-    // }
+        return history.slice(0, 3)
+    }
 
 
     return (
@@ -100,7 +100,9 @@ export const GlobalProvider = ({ children }) => {
             addExpenses,
             getExpenses,
             deleteExpenses,
-            totalExpenses
+            totalExpenses,
+            totalBalance,
+            transactionHistory
 
         }}>            {children}
         </GlobalContext.Provider>

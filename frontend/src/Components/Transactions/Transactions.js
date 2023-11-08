@@ -6,7 +6,7 @@ import { euro } from '../../utils/icons';
 import Chart from '../Chart/Chart';
 import History from '../../HistoryTransactions/History';
 
-function Dashboard() {
+function Transactions() {
     const {totalExpenses,income, expenses, totalIncome, totalBalance, getIncome, getExpenses } = useGlobalContext()
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function Dashboard() {
             <InnerLayout>
                 <h1>All Transactions</h1>
                 <div className="stats-con">
-                    <div className="chart-con">
+                    {/* <div className="chart-con">
                         <Chart />
                         <div className="amount-con">
                             <div className="income">
@@ -41,7 +41,7 @@ function Dashboard() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="history-con">
                         <History />
                         <h2 className="salary-title">Min <span>Salary</span>Max</h2>
@@ -83,7 +83,7 @@ const DashboardStyled = styled.div`
                 gap: 2rem;
                 margin-top: 1rem;
                 .income, .expense{
-                    grid-column: span 1;
+                    grid-column: span 1.5;
                     height : 170px;
                 }
                 .income, .expense, .balance{
@@ -145,4 +145,4 @@ const DashboardStyled = styled.div`
     }
 `;
 
-export default Dashboard
+export default Transactions
