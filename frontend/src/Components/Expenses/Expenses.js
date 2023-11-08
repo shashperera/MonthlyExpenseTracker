@@ -18,7 +18,7 @@ function Expenses() {
     <ExpenseStyled>
       <InnerLayout>
         <h1>Expenses</h1>
-      <h2 className="total-income">Total Expenses: <span>${totalExpenses()}</span></h2>
+      <h2 className="total-income">Total Expenses: <span>€{totalExpenses()}</span></h2>
                 <div className="income-content">
                     <div className="income-container">
                         <ExpenseForm />
@@ -26,7 +26,7 @@ function Expenses() {
                     <div className="income">
                       {expenses.map((expenses) => {
                             const {_id, title, amount, date, category, description, type} = expenses; //destructure properties of income
-                            return <IncomeItem //icons from Income itemexpense category
+                            return <IncomeItem
                                 key={_id}
                                 id={_id} 
                                 title={title} 
@@ -68,6 +68,20 @@ const ExpenseStyled = styled.div`
             color: blue; //var(--color-green)
         }
     }
+    .icon{
+      width: 70px;
+      height: 80px;
+      border-radius: 20px;
+      background: #F5F5F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #FFFFFF;
+      i{
+          font-size: 2.6rem;
+      }
+  }
+
     .income-content{
         display: flex;
         gap: 3.5rem;

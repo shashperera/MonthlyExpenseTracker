@@ -28,6 +28,20 @@ function IncomeItem({
                 return card;
             case 'other':
                 return piggy;
+            case 'education':
+                return book;
+            case 'groceries':
+                return food;
+            case 'health':
+                return medical;
+            case 'subscriptions':
+                return tv;
+            case 'takeaways':
+                return takeaway;
+            case 'clothing':
+                return clothing;
+            case 'travelling':
+                return freelance;
             default:
                 return ''
         }
@@ -61,7 +75,7 @@ function IncomeItem({
     return (
         <IncomeItemStyled indicator={indicatorColor}>
             <div className="icon">
-                {type === 'expenses' ? expenseCatIcon() : categoryIcon()} //icons for expenses or income
+                {type === 'expenses' ? expenseCatIcon() : categoryIcon()}
             </div>
             <div className="content">
                 <h5>{title}</h5>
@@ -105,7 +119,7 @@ const IncomeItemStyled = styled.div`
     width: 100%;
     color: #222260;
     .icon{
-        width: 100px;
+        width: 70px;
         height: 80px;
         border-radius: 20px;
         background: #F5F5F5;
@@ -143,10 +157,10 @@ const IncomeItemStyled = styled.div`
         .inner-content{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: right;
             .text{
                 display: flex;
-                align-items: center;
+                align-items: right;
                 gap: 2rem;
                 p{
                     display: flex;

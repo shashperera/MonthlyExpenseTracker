@@ -70,11 +70,14 @@ function ExpenseForm() {
             <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value=""  disabled >Select Option</option>
-                    <option value="salary">Salary</option>
-                    <option value="investments">Investments</option>
-                    <option value="stocks">Stocks</option>
-                    <option value="bank">Bank Transfer</option>  
-                    <option value="other">Other</option>  
+                    <option value="education">Education</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="health">Health</option>
+                    <option value="subscriptions">Subscriptions</option>
+                    <option value="takeaways">Takeaways</option>  
+                    <option value="clothing">Clothing</option>  
+                    <option value="travelling">Travelling</option>
+                    <option value="other">Other</option>   
                 </select>
             </div>
             <div className="input-control">
@@ -113,6 +116,23 @@ const ExpenseFormStyled = styled.form`
         color: rgba(34, 34, 96, 0.9);
         &::placeholder{
             color: rgba(34, 34, 96, 0.4);
+        }
+    }
+    .inner-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: right;
+        .text{
+            display: flex;
+            align-items: right;
+            gap: 2rem;
+            p{
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                color: var(--primary-color);
+                opacity: 0.8;
+            }
         }
     }
     .input-control{
