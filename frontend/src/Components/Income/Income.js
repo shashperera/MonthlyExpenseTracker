@@ -54,11 +54,11 @@ const IncomeStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FCF6F9;
-        border: 2px solid #FFFFFF;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        border-radius: 20px;
-        padding: 0.25rem;
+          background: #FCF6F9;
+          border: 2px solid #FFFFFF;
+          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+          border-radius: 20px;
+          padding: 0.25rem;
         margin: 1rem 0;
         font-size: 2rem;
         gap: .5rem;

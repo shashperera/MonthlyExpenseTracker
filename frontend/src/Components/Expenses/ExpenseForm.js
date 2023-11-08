@@ -38,7 +38,7 @@ function ExpenseForm() {
     }
 
     return (
-        <ExpenseFormStyled onSubmit={handleSubmit}>
+        <IncomeFormStyled onSubmit={handleSubmit}>
             <div className="input-control">
                 <input 
                     type="text" 
@@ -93,12 +93,12 @@ function ExpenseForm() {
                     color={'#fff'}
                 />
             </div>
-        </ExpenseFormStyled>
+        </IncomeFormStyled>
     )
 }
 
 
-const ExpenseFormStyled = styled.form`
+const IncomeFormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 2rem;
