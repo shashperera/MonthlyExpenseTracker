@@ -48,33 +48,48 @@ function Income() {
 }
 
 const IncomeStyled = styled.div`
+display: flex;
+overflow: auto;
+.total-income{
     display: flex;
-    overflow: auto;
-    .total-income{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-          background: #FCF6F9;
-          border: 2px solid #FFFFFF;
-          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-          border-radius: 20px;
-          padding: 0.25rem;
-        margin: 1rem 0;
-        font-size: 2rem;
-        gap: .5rem;
-        span{
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: blue; //var(--color-green)
-        }
+    justify-content: center;
+    align-items: center;
+    background: #FCF6F9;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 0.25rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    gap: .5rem;
+    span{
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: blue; //var(--color-green)
     }
-    .income-content{
-        display: flex;
-        gap: 3.5rem;
-        .incomes{
-            flex: 1;
-        }
+}
+.icon{
+  width: 70px;
+  height: 80px;
+  border-radius: 20px;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+  i{
+      font-size: 2.6rem;
+  }
+}
+
+.income-content{
+    display: flex;
+    gap: 3.5rem;
+    .income{
+        flex: 1;
     }
+}
 `;
+
 
 export default Income
