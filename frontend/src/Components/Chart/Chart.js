@@ -26,6 +26,15 @@ ChartJs.register(
     ArcElement,
 )
 
+
+function monthFormat(monthNumber) {
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December',
+    ];
+    return monthNames[monthNumber - 1];
+  }
+
 function Chart() {
     const {income, expenses} = useGlobalContext()
 
@@ -59,6 +68,8 @@ function Chart() {
             }
         ]
     }
+
+    
 
 
     return (

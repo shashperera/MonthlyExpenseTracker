@@ -7,75 +7,56 @@ import Chart from '../Chart/Chart';
 import History from '../../HistoryTransactions/History';
 
 function Dashboard() {
-    const {totalExpenses,income, expenses, totalIncome, totalBalance, getIncome, getExpenses } = useGlobalContext()
+  const { totalExpenses, income, expenses, totalIncome, totalBalance, getIncome, getExpenses } = useGlobalContext()
 
-    useEffect(() => {
-        getIncome()
-        getExpenses()
-    }, [])
+  useEffect(() => {
+    getIncome()
+    getExpenses()
+  }, [])
 
-    return (
-        <DashboardStyled>
-            <InnerLayout>
-                <h1>All Transactions</h1>
-                <div className="stats-con">
-                    <div className="chart-con">
-                        <Chart />
-                        <div className="amount-con">
-                            <div className="income">
-                                <h2>Total Income</h2>
-                                <p>
-                                    {euro} {totalIncome()}
-                                </p>
-                            </div>
-                            <div className="expense">
-                                <h2>Total Expense</h2>
-                                <p>
-                                    {euro} {totalExpenses()}
-                                </p>
-                            </div>
-                            <div className="balance">
-                                <h2>Total Balance</h2>
-                                <p>
-                                    {euro} {totalBalance()}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="history-con">
-                        <History />
-                        <h2 className="salary-title">Min <span>Salary</span>Max</h2>
-                        <div className="salary-item">
-                            <p>
-                                {euro}{Math.min(...income.map(item => item.amount))}
-                            </p>
-                            <p>
-                                {euro}{Math.max(...income.map(item => item.amount))}
-                            </p>
-                        </div>
-                        <h2 className="salary-title">Min <span>Expense</span>Max</h2>
-                        <div className="salary-item">
-                            <p>
-                                {euro}{Math.min(...expenses.map(item => item.amount))}
-                            </p>
-                            <p>
-                                {euro}{Math.max(...expenses.map(item => item.amount))}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </InnerLayout>
-        </DashboardStyled>
-    )
+  return (
+    <DashboardStyled>
+      <InnerLayout>
+        <h1>All Transactions</h1>
+        <div className="stats-con">
+          <div className="chart-con">
+            <Chart />
+            <div className="amount-con">
+              <div className="income">
+                <h2>Total Income</h2>
+                <p>
+                  {euro} {totalIncome()}
+                </p>
+              </div>
+              <div className="expense">
+                <h2>Total Expenses</h2>
+                <p>
+                  {euro} {totalExpenses()}
+                </p>
+              </div>
+              <div className="balance">
+                <h2>Total Balance</h2>
+                <p>
+                  {euro} {totalBalance()}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </InnerLayout>
+    </DashboardStyled>
+  )
 }
 
 const DashboardStyled = styled.div`
     .stats-con{
         display: grid;
+        grid-column: 2 / 1;
         grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         .chart-con{
-            grid-column: 1 / 4;
+            grid-column: 3 / 4;
             height: 400px;
             .amount-con{
                 display: grid;
@@ -84,7 +65,7 @@ const DashboardStyled = styled.div`
                 margin-top: 1rem;
                 .income, .expense{
                     grid-column: span 1;
-                    height : 170px;
+                    height : 140px;
                 }
                 .income, .expense, .balance{
                     background: #FCF6F9;
@@ -104,10 +85,11 @@ const DashboardStyled = styled.div`
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    height:140px;
                     p{
                         color: var(--color-green);
                         opacity: 0.6;
-                        font-size: 2rem;
+                        font-size: 2.1rem;
                     }
                 }
             }
