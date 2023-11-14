@@ -3,6 +3,7 @@ const { addIncome, getIncome, deleteIncome } = require('../controllers/incomeCon
 
 const router = require('express').Router()
 
+// Define a route using the router
 router.get('/',(req,res)=> {
     res.send('Hi GET in transactions')
 })
@@ -17,6 +18,5 @@ router.post('/addIncome',addIncome) //method from controller
 
 
 
-
-
+// Export the router to be used in other parts of your application
 module.exports = router

@@ -1,6 +1,8 @@
 const expenseModel = require("../models/expenseModel")
 
 
+//async and await ,wait for the asynchronous operation to complete
+//wrap await line in a try-catch block to handle potential errors
 exports.getExpense = async(req, res) => {
     try {
         const expenses = await expenseModel.find().sort({createdAt : -1})

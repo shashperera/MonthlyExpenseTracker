@@ -1,5 +1,7 @@
 const incomeModel = require("../models/incomeModel")
 
+//async and await ,wait for the asynchronous operation to complete
+//wrap await line in a try-catch block to handle potential errors
 exports.getIncome = async(req, res) => {
     try {
         const incomes = await incomeModel.find().sort({createdAt : -1})

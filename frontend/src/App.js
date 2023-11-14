@@ -15,7 +15,7 @@ function App() {
   const [active, setActive] = useState(1);//id starts from 1
 
   const global = useGlobalContext()
-  // console.log(global)
+  console.log(global)
 
   //display data in same dashboard for different components
   const displayData = () => {

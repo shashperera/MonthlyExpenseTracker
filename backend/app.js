@@ -16,7 +16,7 @@ app.use(cors()) //Cross-Origin Resource Sharing- acessing server
 //     res.send('Hi GET in server') //check response using postman - http://localhost:5000/
 // })
 
-//routes
+// Use the router for a specific path
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/'+ route))) //api to get routes
 
 
