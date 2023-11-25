@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react"
 import axios from 'axios'
 
 //axios to connect to server
-const BASE_URL = "https://magenta-dango-24fd1f.netlify.app/";
-// const BASE_URL = "https://monthly-expense-tracker-backend.vercel.app/";
+// const BASE_URL = "https://magenta-dango-24fd1f.netlify.app/";
+const BASE_URL = "https://monthly-expense-tracker-backend.vercel.app/";
 // const BASE_URL = "http://localhost:5000/api/v1/";
 
 
