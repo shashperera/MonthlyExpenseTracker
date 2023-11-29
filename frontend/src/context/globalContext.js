@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import axios from 'axios'
 
 //axios to connect to server
-const BASE_URL = "https://monthly-expense-tracker-backend.vercel.app/api/v1";
+const BASE_URL = "https://monthly-expense-tracker-backend.onrender.com/api/v1/";
 // const BASE_URL = "http://localhost:5000/api/v1/";
 
 
@@ -16,7 +16,7 @@ export const GlobalProvider = ({ children }) => {
 
     //calculate income
     const addIncome = async (income) => {
-        const response = await axios.post(`${BASE_URL}addIncome`, income)
+        const response = await axios.post(`${"https://monthly-expense-tracker-backend.onrender.com/api/v1/"}addIncome`, income)
             .catch((err) => {
                 setError(err.response.data.message)
             })
