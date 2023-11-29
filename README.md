@@ -1,22 +1,33 @@
-# MonthlyExpenseTracker
-## Monthly Income Expense Tracker
+# Monthly Income Expense Tracker
+
+## Demo
+
+<img src="https://github.com/shashperera/MonthlyExpenseTracker/assets/40666122/cf68b050-4036-4dd0-b13d-5addc3c9a2eb" width="750px">
+
+Production Deployment - https://monthlyexpense-tracker.netlify.app/
+
 ### Technologies
 Frontend - React \
 Backend - Node.js 
 
 ### Setup
-#### Backend
+### Backend
 - cd backend
 - npm install
 - npm start
+Backend Deployment - https://monthly-expense-tracker-backend.onrender.com/
 
-#### Frontend
+#### Backend sample APIs
+- https://monthly-expense-tracker-backend.onrender.com/api/v1/getExpense
+- https://monthly-expense-tracker-backend.onrender.com/api/v1/getIncome
+
+### Frontend
 - cd frontend
 - npm install
 - npm start
 
-Production Deployment - https://monthly-expense-tracker.vercel.app/
-![WhatsApp Image 2023-11-08 at 17 03 27_02c4b7e1](https://github.com/shashperera/MonthlyExpenseTracker/assets/40666122/9f523660-df6a-4942-a363-34d422585f94)
-![image](https://github.com/shashperera/MonthlyExpenseTracker/assets/40666122/49f4c78d-86b5-452f-b29d-08c49214a9be)
+
+<img src="https://github.com/shashperera/MonthlyExpenseTracker/assets/40666122/9f523660-df6a-4942-a363-34d422585f94" width="750px">
+<img src="https://github.com/shashperera/MonthlyExpenseTracker/assets/40666122/49f4c78d-86b5-452f-b29d-08c49214a9be" width="750px">
 
 
